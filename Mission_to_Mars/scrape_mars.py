@@ -105,7 +105,3 @@ def scrape():
     browser.quit()
 
     return scrape_data
-
-if __name__ == "__main__":
-    data = scrape()
-    print(data)

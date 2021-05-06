@@ -3,9 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars News</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 </head>
 
 <body>
+  <div class = "container-body">
+    <div class = "jumbotron text-center">
+      <h1>Mars News</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape for News</a></p>
+    </div>
+    <div class = "container-news">
+      <h2>Latest Mars News</h2>
+      <h3>{{ mars_data.news_title }}</h3>
+      <h3>{{ mars_data.news_p }}</h3>
+    </div>
+    <div class = "container-featImg">
+      <h2>Featured Mars Image</h2>
+      <img src="{{ mars_data.featImg_url }}" alt="Featured Image">
+    </div>
+    <div class = "container">
+      <h2>Mars Facts</h2>
+      <td>{{ mars_data.mars_table }}</td>
+    </div>
+    <div class = "container-hemispheres">
+      <div class="row">
+        <div class="col-6 col-sm-3">
+          <img src="{{ mars_data.hemisphere_image_urls[0].img_url }}" alt="mars_data.hemisphere_image_urls[0].title">
+        </div>
+        <div class="col-6 col-sm-3">
+          <img src="{{ mars_data.hemisphere_image_urls[1].img_url }}" alt="mars_data.hemisphere_image_urls[1].title">
+        </div>
+        <div class="col-6 col-sm-3">
+          <img src="{{ mars_data.hemisphere_image_urls[2].img_url }}" alt="mars_data.hemisphere_image_urls[2].title">
+        </div>
+        <div class="col-6 col-sm-3">
+          <img src="{{ mars_data.hemisphere_image_urls[3].img_url }}" alt="mars_data.hemisphere_image_urls[3].title">
+        </div>
+    </div>
+  </div> 
 </body>
 
 </html>
