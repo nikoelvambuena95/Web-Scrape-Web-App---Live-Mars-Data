@@ -1,7 +1,8 @@
+# Load dependencies
 from bs4 import BeautifulSoup as bs
-import requests
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
+import requests
 import pandas as pd
 
 
@@ -15,15 +16,21 @@ def scrape():
 ################
 ### NASA Mars News
 ################
+# Splinter set-up
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
+
     url = "https://mars.nasa.gov/news/"
-    response = requests.get(url)
+    browser.visit(url)
+    html = browser.html
+    news_site = bs(html, 'html.parser')
 
-# Create a BS object
-    marsSite = bs(response.text, 'html.parser')
+# Get Latest News Title and Opening Paragraph
+    result = news_site.find('div', class_ = 'list_text')
+    news_title = result.find('a').text
+    news_para = result.find('div', class_ = 'article_teaser_body').text
 
-# Create News Title and Paragraph variables 
-    news_title = marsSite.title.text
-    news_p = marsSite.body.p.text
+    browser.quit()
 ################
 ### JPL Mars Space Images - Featured Image
 ################
@@ -97,7 +104,7 @@ def scrape():
 
     scrape_data = {
         "news_title" : news_title,
-        "news_p" : news_p,
+        "news_para" : news_para,
         "featImg_url" : featImg_url,
         "mars_table" : mars_htmlTable,
         "hemisphere_image_urls" : hemisphere_image_urls
