@@ -59,7 +59,7 @@ def scrape():
     mars_df = tables[0]
 
 # Convert dataframe to HTML table
-    mars_htmlTable = mars_df.to_html(classes='table table-striped')
+    mars_htmlTable = (mars_df.to_html(header=False, classes='table'))
     mars_htmlTable = mars_htmlTable.replace('\n', '')
 
 ################
