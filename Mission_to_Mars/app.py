@@ -5,18 +5,6 @@ import scrape_mars
 # Create an instance of Flask
 app = Flask(__name__)
 
-# # Create connection variable
-# conn = 'mongodb://localhost:27017'
-
-# # Pass connection to the Pymongo instance
-# client = PyMongo.MongoClient(conn)
-
-# # Create connection to database if none available
-# db = client.mars_db
-
-# # Drop collection if available, will remove duplicates
-# db.mars_facts.drop()
-
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
@@ -25,7 +13,6 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 @app.route("/")
 def home():
 
-    # Find one record of data from the mongo database
     data = mongo.db.collection.find_one()
 
     # Return template and data
@@ -40,9 +27,7 @@ def scrape():
     mars_data = scrape_mars.scrape()
 
     # Update the Mongo database using update and upsert=True
-    db.mars.insert_many(
-        mars_data
-    )
+    mongo.db.collection.update({}, mars_data, upsert = True)
 
     # Redirect back to home page
     return redirect("/")
