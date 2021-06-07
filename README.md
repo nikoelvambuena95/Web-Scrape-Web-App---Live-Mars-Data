@@ -1,4 +1,4 @@
-# "Mars Web Application"
+# Mars Web Application
 
 This repo highlights the following three data skills:
 1. <b>Web scraping</b> a NASA website
