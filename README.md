@@ -5,7 +5,7 @@ This repo highlights the following three data skills:
 2. <b>Storing data</b> with Mongo DB
 3. <b>Building a web application</b> through Flask
 
-### 1. Web scraping
+## 1. Web scraping
 
 Four different website were scraped using the open-source tool <b>[Splinter](https://splinter.readthedocs.io/en/latest/)</b> to automate browser actions...
 ```python
@@ -34,7 +34,7 @@ news_para = result.find('div', class_ = 'article_teaser_body').text
 <br>
 This web scraping is assigned as a function [scrape()] in the <em>scrape_mars.py</em> file and is called in the <em>app.py</em> file as a flask route [("/scrape")].
 
-### 2. Storing Data
+## 2. Storing Data
 
 In the <em>app.py</em> file, I connect to a local <b>[Mongo database](https://www.mongodb.com/resources)</b>...
 ```python
@@ -51,7 +51,7 @@ def scrape():
     mongo.db.collection.update({}, mars_data, upsert = True)
 ```
 
-### 3. Web Application
+## 3. Web Application
 
 Finally, the data is visualized using <b>[Flask](https://flask.palletsprojects.com/en/1.1.x/)</b> to render the html page.
 ```python
