@@ -1,7 +1,7 @@
 # Mars Web Application
 
 This repo highlights the following three data skills:
-1. <b>Web scraping</b> a NASA website
+1. <b>Web scraping</b> "Mars" websites
 2. <b>Storing data</b> with Mongo DB
 3. <b>Building a web application</b> through Flask
 
