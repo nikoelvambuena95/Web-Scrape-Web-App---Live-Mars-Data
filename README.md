@@ -74,3 +74,8 @@ The easiest fix I could think of was changing the HTML script for the table dire
 ```python
 <table border="1" class="table">
 ```
+---
+### Contact
+LinkedIn | https://www.linkedin.com/in/niko-elvambuena/
+<br>
+Email | niko.elvambuena95@gmail.com
