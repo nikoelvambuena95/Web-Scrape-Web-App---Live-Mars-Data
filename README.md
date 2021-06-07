@@ -74,6 +74,11 @@ The easiest fix I could think of was changing the HTML script for the table dire
 ```python
 <table border="1" class="table">
 ```
+
+### Source Sites
+- <em>[NASA - Mars News Site](https://mars.nasa.gov/news/)</em>
+- <em>[Mars Facts](https://space-facts.com/mars/)</em>
+- <em>[USGS Astrogeology](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars)</em>
 ---
 ### Contact
 LinkedIn | https://www.linkedin.com/in/niko-elvambuena/
